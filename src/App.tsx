@@ -1,5 +1,4 @@
 import { isMobile } from 'react-device-detect';
-import reactLogo from './assets/react.svg';
 import onEventMobile from './assets/on-event-mobile.png';
 import preEventMobile from './assets/pre-event-mobile.png';
 import onEventDesktop from './assets/on-event-desktop.png';
