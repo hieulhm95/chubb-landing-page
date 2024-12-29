@@ -6,16 +6,11 @@
 }
 
 .posterWrapper {
-  width: 100%;
+  width: 100vw;
   height: 100vh;
-}
-
-.posterWrapper img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  will-change: filter;
-  transition: filter 300ms;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
 }
 
 .logo {
