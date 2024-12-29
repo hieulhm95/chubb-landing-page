@@ -6,7 +6,7 @@ import Spinner from './Spinner';
 
 const AudioPlayer = ({ fileUrl, isMobile }: { fileUrl: string; isMobile: boolean }) => {
   const audioRef = useRef<HTMLAudioElement>(null);
-  const [isLoading, setIsLoading] = useState(false);
+  const [isLoading, setIsLoading] = useState(true);
   const [isLoaded, setIsLoaded] = useState(false);
   const [isPlayed, setIsPlayed] = useState(false);
 
@@ -22,11 +22,19 @@ const AudioPlayer = ({ fileUrl, isMobile }: { fileUrl: string; isMobile: boolean
     }
   };
 
-  const handleLoadStart = () => {
-    setIsLoading(true);
+  const handleCanPlayThrough = () => {
+    setIsLoading(false);
+    setIsLoaded(true);
   };
 
-  const handleCanPlayThrough = () => {
+  const handleLoadedMetadata = () => {
+    console.log('Audio metadata loaded 1');
+    setIsLoading(false);
+    setIsLoaded(true);
+  };
+
+  const handleLoadedData = () => {
+    console.log('Audio data loaded 1');
     setIsLoading(false);
     setIsLoaded(true);
   };
@@ -58,17 +66,19 @@ const AudioPlayer = ({ fileUrl, isMobile }: { fileUrl: string; isMobile: boolean
         <audio
           ref={audioRef}
           style={{ display: 'none' }}
-          onLoadStart={handleLoadStart}
           onCanPlayThrough={handleCanPlayThrough}
+          onLoadedMetadata={handleLoadedMetadata}
+          onLoadedData={handleLoadedData}
           onEnded={() => setIsPlayed(false)}
           preload="auto"
         >
           <source src={fileUrl} type="audio/mp3" />
+          <source src={fileUrl} type="audio/mp4" />
           Your browser does not support the audio element.
         </audio>
         <div className="audio-player-container">
           <div
-            onClick={handlePlay}
+            onClick={isLoaded ? handlePlay : undefined}
             className={`audio-heart-icon ${isPlayed ? 'audio-heart-icon-play' : ''}`}
           >
             {isLoading && <Spinner />}

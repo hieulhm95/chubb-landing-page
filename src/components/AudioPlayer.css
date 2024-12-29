@@ -7,8 +7,10 @@
 .audio-heart-icon {
   width: 96px;
   height: 80px;
+}
 
-  @media screen and (max-width: 768px) {
+@media screen and (max-width: 768px) {
+  .audio-heart-icon {
     width: 64px;
     height: 54px;
   }
