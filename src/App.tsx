@@ -59,7 +59,9 @@ function App() {
   //   ? `https://gateway.chubbannualstaffparty2025.com/generate/${infoData?.mediaId}`
   //   : '';
 
-  const fileUrl = `https://gateway.chubbannualstaffparty2025.com/generate/${infoData?.mediaId}`;
+  const fileUrl =
+    infoData?.mediaLink ||
+    `https://gateway.chubbannualstaffparty2025.com/generate/${infoData?.mediaId}`;
 
   return (
     <div
