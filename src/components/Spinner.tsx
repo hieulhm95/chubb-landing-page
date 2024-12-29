@@ -16,7 +16,7 @@ const Spinner = () => {
         width="200"
         height="200"
         style={{ shapeRendering: 'auto', display: 'block', background: 'transparent' }}
-        xmlns:xlink="http://www.w3.org/1999/xlink"
+        xmlnsXlink="http://www.w3.org/1999/xlink"
       >
         <g>
           <g transform="rotate(0 50 50)">

@@ -24,11 +24,11 @@ function App() {
   if (infoError)
     return (
       <div>
-        <progress value={null} />
+        <progress value={undefined} />
         <p>Có lỗi xảy ra, vui lòng thử lại</p>
       </div>
     );
-  if (!infoData || isLoading) return <progress value={null} />;
+  if (!infoData || isLoading) return <progress value={undefined} />;
 
   const getBackground = () => {
     if (isOnEvent) {
