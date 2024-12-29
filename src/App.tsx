@@ -27,10 +27,7 @@ function App() {
     data: infoData,
     error: infoError,
     isLoading,
-  } = useSWR(
-    id ? `https://gateway.chubbannualstaffparty2025.com/generate/${id}/info` : null,
-    fetcher
-  );
+  } = useSWR(`https://gateway.chubbannualstaffparty2025.com/generate/${id}/info`, fetcher);
 
   if (!id) {
     return (
