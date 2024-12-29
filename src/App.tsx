@@ -1,8 +1,8 @@
 import { isMobile } from 'react-device-detect';
-import onEventMobile from './assets/on-event-mobile.png';
-import preEventMobile from './assets/pre-event-mobile.png';
-import onEventDesktop from './assets/on-event-desktop.png';
-import preEventDesktop from './assets/pre-event-desktop.png';
+import onEventMobile from './assets/on-event-mobile.jpg';
+import preEventMobile from './assets/pre-event-mobile.jpg';
+import onEventDesktop from './assets/on-event-desktop.jpg';
+import preEventDesktop from './assets/pre-event-desktop.jpg';
 import './App.css';
 import AudioPlayer from './components/AudioPlayer';
 import useSWR from 'swr';

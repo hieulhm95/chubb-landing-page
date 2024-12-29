@@ -61,6 +61,7 @@ const AudioPlayer = ({ fileUrl, isMobile }: { fileUrl: string; isMobile: boolean
           onLoadStart={handleLoadStart}
           onCanPlayThrough={handleCanPlayThrough}
           onEnded={() => setIsPlayed(false)}
+          preload="auto"
         >
           <source src={fileUrl} type="audio/mp3" />
           Your browser does not support the audio element.
