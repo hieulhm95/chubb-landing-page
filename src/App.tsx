@@ -62,7 +62,7 @@ function App({ isOnEvent }: { isOnEvent: boolean }) {
   //   : '';
 
   const fileUrl =
-    // infoData?.mediaLink ||
+    infoData?.mediaLink ||
     `https://gateway.chubbannualstaffparty2025.com/generate/${infoData?.mediaId}`;
 
   return (
