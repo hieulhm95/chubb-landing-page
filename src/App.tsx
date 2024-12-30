@@ -8,9 +8,8 @@ import AudioPlayer from './components/AudioPlayer';
 import useSWR from 'swr';
 
 const fetcher = (...args: [RequestInfo, RequestInit?]) => fetch(...args).then(res => res.json());
-const isOnEvent = true;
 
-function App() {
+function App({ isOnEvent }: { isOnEvent: boolean }) {
   const urlObj = new URL(window.location.href);
   const path = urlObj.pathname;
   const id = path.substring(1);
@@ -27,9 +26,12 @@ function App() {
     data: infoData,
     error: infoError,
     isLoading,
-  } = useSWR(`https://gateway.chubbannualstaffparty2025.com/generate/${id}/info`, fetcher);
+  } = useSWR(
+    isOnEvent && id ? `https://gateway.chubbannualstaffparty2025.com/generate/${id}/info` : null,
+    fetcher
+  );
 
-  if (!id) {
+  if (!id || !isOnEvent) {
     return (
       <div
         className="posterWrapper"
