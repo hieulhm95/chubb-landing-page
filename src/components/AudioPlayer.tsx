@@ -72,16 +72,17 @@ const AudioPlayer = ({ fileUrl, isMobile }: { fileUrl: string; isMobile: boolean
           onEnded={() => setIsPlayed(false)}
           preload="auto"
         >
-          {/* <source src={fileUrl} type="audio/mp3" /> */}
-          {/* <source src={fileUrl} type="audio/mp4" /> */}
           <source src={`${fileUrl}`} type="audio/mp3" />
           <source src={`${fileUrl}`} type="audio/mp4" />
           <source src={`${fileUrl}`} type="audio/ogg" />
+          <source src={`${fileUrl}`} type="audio/mpeg" />
+          <source src={`${fileUrl}`} type="audio/wav" />
+          <source src={`${fileUrl}`} type="audio/x-m4a" />
           Your browser does not support the audio element.
         </audio>
         <div className="audio-player-container">
           <div
-            onClick={isLoaded ? handlePlay : undefined}
+            onClick={handlePlay}
             className={`audio-heart-icon ${isPlayed ? 'audio-heart-icon-play' : ''}`}
           >
             {isLoading && <Spinner />}
